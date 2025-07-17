@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Blissful Ties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/index.html" class="logo"><span>Blissful</span>Ties</a>
+        <div id="navbar-container"></div>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+    </header>
+
+    <div class="success-container">
+        <h3>Thank You!</h3>
+        <p>Your booking has been received. We will contact you shortly.</p>
+        <a href="/index.html" class="btn">Return to Home</a>
+    </div>
+</body>
+</html>

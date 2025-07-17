@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Blissful Ties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('forms.jpg') no-repeat center center fixed; background-size: cover;">
+    <header class="header">
+        <a href="/index.html" class="logo"><span>Blissful</span>Ties</a>
+        <div id="navbar-container"></div>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+    </header>
+
+    <div id="bookingContainer" class="container mt-4">
+        <h2 class="event text-center">Book Your Event</h2>
+        <!-- Updated Form -->
+        <form id="eventForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter the address" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="eventType" class="form-label">Event Package <span class="text-danger">*</span></label>
+                <select class="form-select" id="eventType" name="eventType" required>
+                    <option value="">Select Packages</option>
+                    <option value="wedding">Basic Packages - $50,000</option>
+                    <option value="birthday">Premium Package - $150,000</option>
+                    <option value="corporate">Luxury Package - $200,000</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Event Date <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Event Time <span class="text-danger">*</span></label>
+                <input type="time" class="form-control" id="time" name="time" required>
+            </div>
+            <div class="mb-3">
+                <label for="guests" class="form-label">Number of Guests <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="guests" name="guests" placeholder="Enter number of guests" required>
+            </div>
+            <div class="mb-3">
+                <label for="requirements" class="form-label">Special Requirements</label>
+                <textarea class="form-control" id="requirements" name="requirements" rows="3" placeholder="Any additional services needed"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="payment" class="form-label">Payment Method <span class="text-danger">*</span></label>
+                <select class="form-select" id="payment" name="payment" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="paypal">Gpay</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary w-100" id="bookBtn">Book Now</button>
+            </div>
+        </form>
+        <script>
+document.getElementById("eventForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Collect form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const eventType = document.getElementById("eventType").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const guests = document.getElementById("guests").value;
+    const requirements = document.getElementById("requirements").value;
+    const payment = document.getElementById("payment").value;
+
+    // Save booking to localStorage (optional)
+    const booking = {
+        name, email, phone, address, eventType, date, time, guests, requirements, payment
+    };
+
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    bookings.push(booking);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
+    // Redirect to thank you page
+    window.location.href = "thanks.html";
+});
+</script>
+<script>
+window.onload = function () {
+    const bookings = JSON.parse(localStorage.getItem("bookings"));
+    if (bookings && bookings.length > 0) {
+        const lastBooking = bookings[bookings.length - 1]; // Get the last booking made
+
+        document.getElementById("name").value = lastBooking.name;
+        document.getElementById("email").value = lastBooking.email;
+        document.getElementById("phone").value = lastBooking.phone;
+        document.getElementById("address").value = lastBooking.address;
+        document.getElementById("eventType").value = lastBooking.eventType;
+        document.getElementById("date").value = lastBooking.date;
+        document.getElementById("time").value = lastBooking.time;
+        document.getElementById("guests").value = lastBooking.guests;
+        document.getElementById("requirements").value = lastBooking.requirements;
+        document.getElementById("payment").value = lastBooking.payment;
+    }
+};
+</script>
+
+ <a href="index.html"></a>
+ <a href="nav.html"></a>
+
+    </div>
+</body>
+</html>

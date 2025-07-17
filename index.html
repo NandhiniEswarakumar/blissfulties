@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Blissful ties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <header class="header">
+        <a href="#" class="logo"><span>Blissful</span>Ties</a>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div id="navbar-container"></div>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+    </header>
+
+    <section class="hero-section">
+        <h2 class="hero-text">Let Us Manage Every Detail Of Your Special Day!</h2>
+        <h3 class="hero-subtext">Your Dream Wedding, Our Expertise.</h3>
+        <div class="hero-signup">
+  <a href="signup.html" class="signup-btn">Get Started – Sign Up</a>
+</div>
+
+    </section>
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About <span>Us</span></h2>
+            <p>
+                At <span><strong>Blissful Ties</strong></span>, we believe that every love story deserves a magical beginning.
+                As expert wedding event organizers, we specialize in crafting unforgettable moments, ensuring that your big day
+                is stress-free, seamless, and truly special.
+            </p>
+            <p>
+                With years of experience in wedding planning, we take pride in transforming dreams into reality.
+                From elegant décor and venue selection to catering, entertainment, and coordination, we handle every detail with perfection.
+                Whether you envision an intimate ceremony or a grand celebration, our dedicated team brings creativity, passion,
+                and precision to make your wedding a cherished memory.
+            </p>
+            <p>
+                Let us take care of the details while you enjoy every moment of your journey. Your dream wedding starts here!
+            </p>
+            
+        </div>
+        
+
+        <div class="carousel">
+            <div class="slider">
+                <img src="south indian.jpg" alt="Wedding Event 1">
+                <img src="hang.jpg" alt="Wedding Event 2">
+                <img src="pillar.jpg" alt="Wedding Event 3">
+                <img src="download (1).jpg" alt="Wedding Event 4">
+                <img src="choco.jpg" alt="Wedding Event 5">
+                <img src="floor.jpg" alt="Wedding Event 6">
+                <img src="wall.jpg" alt="Wedding Event 7">
+            </div>
+            <a href="index.html"></a>
+        </div>
+        <section id="services" class="service-section">
+            <h2 class="service-title">Our <span>Services</span></h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <video controls >
+                        <source src="stage.mp4" type="video/mp4">
+                    </video>
+                    <h3>Venue Setup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="video 4.mp4" type="video/mp4">
+                    </video>
+                    <h3>Stage Setup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="cantering video.mp4" type="video/mp4">
+                    </video>
+                    <h3>Catering Services</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="bridal makeeup.mp4" type="video/mp4">
+                    </video>
+                    <h3>Bridal Makeup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="photography.mp4" type="video/mp4">
+                    </video>
+                    <h3>Photography</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="mehandi.mp4" type="video/mp4">
+                    </video>
+                    <h3>Mehandi</h3>
+                </div>
+            </div>
+             <a href="index.html"></a>
+        </section>
+        <section id="Price" class="Price-section">
+            <h2 class="price-title">Our Wedding Packages & Pricing</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Description</th>
+                        <th>Prices</th>
+                        <th>Inclusions</th>
+                        <th>Book package</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Packages</td>
+                        <td>Perfect for small weddings with limited requiremnts</td>
+                        <td>$50,000</td>
+                        <td>
+                            <ul>
+                                <li>Venue setup</li>
+                                <li>Basic Decoration</li>
+                                <li>Catering for 100 guests</li>
+                                <li>Photography</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="book.html">
+                                <button class="book-now">Book Now</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Premium Package</td>
+                        <td>For a more elegant and detailed wedding celebration.</td>
+                        <td>$1,50,000</td>
+                        <td>
+                            <ul>
+                                <li>Venue Setup</li>
+                                <li>Custom Decorations</li>
+                                <li>Catering for 400 guests</li>
+                                <li>Photography + Videography</li>
+                                <li>Bridal Makeup + Styling</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="book.html">
+                                <button class="book-now">Book Now</button>
+                            </a>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Luxury Package</td>
+                            <td>For those who want a truly lavish wedding experience.</td>
+                            <td>$2,00,000</td>
+                            <td>
+                                <ul>
+                                    <li>Venue Setup</li>
+                                    <li>Exclusive Decor & Themes</li>
+                                    <li>catering for 1000 guests</li>
+                                    <li>Photography and videography</li>
+                                    <li>Bridal Makeup, Hair and Styling</li>
+                                    <li>Mehandi</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <a href="book.html">
+                                    <button class="book-now">Book Now</button>
+                                </a>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+             <a href="index.html"></a>
+        </section>
+        <section id="Contact" class="contact-section">
+            <h2>Contact <span>Us</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> Phone: +91 9043626614</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@blissfulties.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Wedding Street, Harur, Uthangarai</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuBtn = document.getElementById('menuBtn');
+                const navbar = document.getElementById('navbar');
+                
+                menuBtn.addEventListener('click', function() {
+                    navbar.classList.toggle('active');
+                });
+            });
+        </script>
+        <a href="/#home.html"></a>
+        <a href="/#about"></a>
+        <a href="/#services"></a>
+        <a href="/#Price"></a>
+        <a href="/#book.html"></a>
+        <a href="/#bookings.html"></a>
+        <a href="/#cart.html"></a>
+        <a href="/#carts.js"></a>
+        <a href="/#login.html"></a>
+        <a href="/#signup.html"></a>
+        <a href="/#script.js"></a>
+        <a href="/#thanks.html"></a>
+        <a href="/#script.js"></a>
+        <a href="/#server.js"></a>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup - Blissful Ties</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    body {
+      background: url('forms.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    .signup-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .signup-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      margin-top: 150px;
+      position: relative;
+      z-index: 1;
+      color: gold;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #FFD700;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    .form-group label span {
+      color: #ff6b6b;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      padding-right: 2.5rem;
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: black;
+    }
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #FFD700;
+      cursor: pointer;
+    }
+    .signup-btn {
+      background-color: #FFD700;
+      color: #213555;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+    .signup-btn:hover {
+      background-color: #ffd900;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+      color: white;
+    }
+    .login-link a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    .input-icon-group {
+  position: relative;
+}
+.input-icon-group input {
+  padding-right: 2.7rem;
+}
+.input-icon-group .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #FFD700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/index.html" class="logo"><span>Blissful</span>Ties</a>
+    <div id="navbar-container"></div>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    </script>
+  </header>
+
+  <div class="signup-container">
+    <div class="signup-form">
+      <h2 style="text-align:center; margin-bottom: 2rem; color: gold;">Sign Up</h2>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="name">Full Name <span>*</span></label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address <span>*</span></label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span>*</span></label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required />
+        </div>
+        <div class="form-group password-wrapper">
+  <label for="password">Password <span>*</span></label>
+  <div class="input-icon-group">
+    <input type="password" id="password" placeholder="Enter your password" required />
+    <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+  </div>
+</div>
+
+       <div class="form-group password-wrapper">
+  <label for="confirm-password">Confirm Password <span>*</span></label>
+  <div class="input-icon-group">
+    <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+    <i class="fas fa-eye toggle-password" onclick="togglePassword('confirm-password', this)"></i>
+  </div>
+</div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+      <div class="login-link">
+        <p>Already have an account? <a href="/login.html">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      const type = input.getAttribute("type");
+      if (type === "password") {
+        input.setAttribute("type", "text");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.setAttribute("type", "password");
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+      if (password !== confirmPassword) {
+        alert("❌ Passwords do not match!");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const emailExists = users.some(user => user.email === email);
+      if (emailExists) {
+        alert("⚠️ Email already registered. Please login.");
+        return;
+      }
+
+      users.push({ name, email, phone, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("✅ Signup successful! Please login.");
+      window.location.href = "login.html";
+    });
+  </script>
+  <a href="nav.html"></a>
+</body>
+</html>

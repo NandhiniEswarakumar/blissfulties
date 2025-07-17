@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Blissful Ties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bill-page">
+    <header class="header">
+        <a href="/index.html" class="logo"><span>Blissful</span>Ties</a>
+        <div id="navbar-container"></div>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+    </header>
+    <div class="bill-container">
+        <br>
+        <h2 style="color: rgb(209, 225, 83);font-weight: bolder;">Your Cart</h2>
+        <br>
+        <div id="cart-items"></div>
+        <br>
+        <h3 style="color: white">Total: ₹<span id="total-price">0</span></h3>
+        <div class="bill-button">
+            <button onclick="clearCart()">Clear Cart</button>
+            <button onclick="ordernow()">Order Now</button>
+        </div>
+        <div id="order-message"></div> 
+        <button class="back-btn" onclick="window.location.href='home.html'">Back to Merchandise</button>
+    </div>
+    <script src="carts.js"></script>
+    <a href="nav.html">
+    </a>
+</body>
+</html>

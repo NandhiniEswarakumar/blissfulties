@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Merchandise Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+
+    <h2>Event Merchandise</h2>
+    <div class="products">
+        <div class="product">
+            <img src="gifts.jpg" alt="Return gift">
+            <h3>Return Gift</h3>
+            <p>₹499</p>
+            <button onclick="addToCart('Return Gift', 499)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="gifts1.jpg" alt="Return gift">
+            <h3>Return Gift</h3>
+            <p>₹599</p>
+            <button onclick="addToCart('Return Gift', 599)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="gifts2.jpg" alt="Return gift">
+            <h3>Return Gift</h3>
+            <p>₹849</p>
+            <button onclick="addToCart('Return Gift', 849)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="gifts3.jpg" alt="Return gift">
+            <h3>Return Gift</h3>
+            <p>₹340</p>
+            <button onclick="addToCart('Return Gift', 340)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="photoboot3.jpg" alt="Return gift">
+            <h3>PhotoBoot</h3>
+            <p>₹200</p>
+            <button onclick="addToCart('PhotoBook', 200)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="photoboot5.jpg" alt="Photoboot">
+            <h3>PhotoBoot</h3>
+            <p>₹199</p>
+            <button onclick="addToCart('Photoboot', 199)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="photoboot1.jpg" alt="Return gift">
+            <h3>PhotoBoot</h3>
+            <p>₹500</p>
+            <button onclick="addToCart('PhotoBoot', 500)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="photoboot2.jpg" alt="Return gift">
+            <h3>PhotoBoot</h3>
+            <p>₹900</p>
+            <button onclick="addToCart('PhotoBoot',900)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="balon4.jpg" alt="Photoboot">
+            <h3>Custom Balloon</h3>
+            <p>₹1000</p>
+            <button onclick="addToCart('Custom Balloon', 1000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="balon1.jpg" alt="Photoboot">
+            <h3>Custom Balloon</h3>
+            <p>₹1400</p>
+            <button onclick="addToCart('Custom Balloon', 1400)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="balon2.jpg" alt="Customized Balloon">
+            <h3>Custom Balloon</h3>
+            <p>₹2900</p>
+            <button onclick="addToCart('Custom Balloon', 2900)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="balon3.jpg" alt="Customized Balloon">
+            <h3>Custom Balloon</h3>
+            <p>₹4000</p>
+            <button onclick="addToCart('Customized Balloon', 4000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="plate3.jpg" alt="Customized Balloon">
+            <h3>Plate Decor</h3>
+            <p>₹999</p>
+            <button onclick="addToCart('Plate Decor', 999)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="plate1.jpg" alt="Customized Balloon">
+            <h3>Plate Decor</h3>
+            <p>₹700</p>
+            <button onclick="addToCart('Plate Decor', 700)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="plat2.jpg" alt="Customized Balloon">
+            <h3>Plate Decor</h3>
+            <p>₹650</p>
+            <button onclick="addToCart('Plate Decor', 650)">Add to Cart</button>
+        </div>
+
+
+        <div class="product">
+            <img src="plate.jpg" alt="Photo Frames">
+            <h3>Plate Decor</h3>
+            <p>₹1500</p>
+            <button onclick="addToCart('Plate Decor', 1500)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="button-container">
+    <a href="index.html" class="cart-btn">Back to Home Page</a>
+    <a href="cart.html" class="cart-btn">Go to Cart</a>
+</div>
+    <script src="script.js"></script>
+    <a href="nav.html">
+    </a>
+</body>
+</html>

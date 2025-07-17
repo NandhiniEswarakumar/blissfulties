@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Bookings - Blissful Ties</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('forms.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 30px;
+    }
+
+    .booking-card {
+      background-color: #ffffff;
+      color: #333;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .booking-card:hover {
+      transform: scale(1.02);
+    }
+
+    .booking-card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .booking-card p {
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+
+    .header {
+      background-color: #002244;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const correctPassword = "123"; // 🔐 Change this to your password
+    const enteredPassword = prompt("Enter admin password to view bookings:");
+
+    if (enteredPassword !== correctPassword) {
+      alert("Access denied!");
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <header class="header">
+    <a href="index.html" class="logo"><span>Blissful</span>Ties</a>
+  </header>
+
+  <div class="container">
+    <h2>All Bookings</h2>
+    <div id="bookingList"></div>
+  </div>
+
+  <script>
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    const container = document.getElementById("bookingList");
+
+    if (bookings.length === 0) {
+      container.innerHTML = "<p style='text-align:center;'>No bookings found.</p>";
+    } else {
+      bookings.forEach((b, i) => {
+        container.innerHTML += `
+          <div class="booking-card">
+            <h3>Booking #${i + 1}</h3>
+            <p><strong>Name:</strong> ${b.name}</p>
+            <p><strong>Email:</strong> ${b.email}</p>
+            <p><strong>Phone:</strong> ${b.phone}</p>
+            <p><strong>Address:</strong> ${b.address}</p>
+            <p><strong>Event Package:</strong> ${b.eventType}</p>
+            <p><strong>Date:</strong> ${b.date}</p>
+            <p><strong>Time:</strong> ${b.time}</p>
+            <p><strong>No. of Guests:</strong> ${b.guests}</p>
+            <p><strong>Requirements:</strong> ${b.requirements}</p>
+            <p><strong>Payment:</strong> ${b.payment}</p>
+          </div>
+        `;
+      });
+    }
+  </script>
+   <a href="index.html"></a>
+   <a href="nav.html"></a>
+</body>
+</html>
